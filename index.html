@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rainy-Day-Studios</title>
+  <meta name="description" content="Rainy-Day-Studios – kleine, liebevolle Spiele. Entwickler von Pizza Pile." />
+  <style>
+    :root { --bg1: #141b28; --bg2: #2b3a52; --text: #eaf1fa; --muted: #a9b8cc; --card: rgba(255,255,255,.06); --warm: #ffb46b; --accent: #7ec8f2; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--bg1), var(--bg2)) fixed;
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    /* falling rain */
+    .rain { position: fixed; inset: 0; pointer-events: none; overflow: hidden; }
+    .rain i {
+      position: absolute; top: -60px; width: 2px; height: 40px;
+      background: linear-gradient(transparent, rgba(169,196,230,.55));
+      transform: rotate(8deg);
+      animation: fall linear infinite;
+    }
+    @keyframes fall { to { transform: translate(-80px, 110vh) rotate(8deg); } }
+    @media (prefers-reduced-motion: reduce) { .rain { display: none; } }
+    main { position: relative; max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
+    header { text-align: center; }
+    .window {
+      width: 180px; height: 180px; margin: 0 auto 24px; border-radius: 50%;
+      border: 14px solid #3a3f4b; outline: 3px solid #1a1d24;
+      background: linear-gradient(#ffd59a, #e98f55);
+      box-shadow: 0 0 80px rgba(255,180,107,.35);
+      position: relative; overflow: hidden;
+    }
+    .window svg { position: absolute; inset: 0; }
+    h1 { margin: 0; font-size: clamp(30px, 7vw, 46px); letter-spacing: .5px; }
+    .tagline { color: var(--muted); margin: 6px 0 0; }
+    section { margin-top: 48px; }
+    h2 { font-size: 22px; margin: 0 0 16px; }
+    .game {
+      display: flex; gap: 20px; align-items: center;
+      background: var(--card); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 20px; padding: 18px;
+    }
+    .game img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
+    .game h3 { margin: 0 0 4px; font-size: 20px; }
+    .game p { margin: 0 0 8px; color: var(--muted); }
+    a { color: var(--accent); }
+    .links a { margin-right: 14px; white-space: nowrap; }
+    footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
+    @media (max-width: 480px) { .game { flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+  <div class="rain" id="rain"></div>
+  <main>
+    <header>
+      <div class="window" aria-hidden="true">
+        <!-- developer typing at a laptop, in silhouette -->
+        <svg viewBox="-90 -90 180 180">
+          <g fill="#1e1726">
+            <rect x="-90" y="36" width="180" height="6" />
+            <rect x="-76" y="-8" width="8" height="54" rx="3" />
+            <path d="M-64 34 L-66 6 L-59 -12 L-44 -20 L-29 -15 L-24 5 L-28 20 L-5 25 L-5 34 Z" />
+            <rect x="-45" y="-29" width="13" height="13" rx="3" />
+            <circle cx="-37" cy="-38" r="13.5" />
+            <rect x="15" y="33" width="46" height="3" />
+            <path d="M56 34 L63 -1 L67 0 L60 35 Z" />
+            <path d="M-33 -7 L-8 15 L28 29" stroke="#1e1726" stroke-width="7" fill="none" stroke-linecap="round" />
+          </g>
+          <path d="M62 2 L57 32 L-25 -35 Z" fill="#bfe6ff" opacity=".3" />
+        </svg>
+      </div>
+      <h1>Rainy-Day-Studios</h1>
+      <p class="tagline">Kleine Spiele für Regentage · Little games for rainy days</p>
+    </header>
+
+    <section>
+      <h2>Spiele · Games</h2>
+      <div class="game">
+        <img src="pizza-pile/icon.png" alt="Pizza Pile App-Icon" />
+        <div>
+          <h3>Pizza Pile</h3>
+          <p>Stapel die höchste Pizza der Welt – von der Küche bis zum Mond! 🍕<br />Stack the tallest pizza in the world – from the kitchen to the moon!</p>
+          <div class="links">
+            <a href="pizza-pile/privacy.html">Datenschutz / Privacy</a>
+            <!-- TODO: add the Google Play link once the game is published -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Kontakt · Contact</h2>
+      <p>E-Mail: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a></p>
+    </section>
+
+    <section id="impressum">
+      <h2>Impressum · Legal notice</h2>
+      <p>
+        Rainy-Day-Studios – Jakob Müllner<br />
+        Bahnstraße 51/13<br />
+        7000 Eisenstadt, Österreich<br />
+        E-Mail: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a>
+      </p>
+      <p class="tagline">Unternehmensgegenstand: Entwicklung und Vertrieb von Spielen für Mobilgeräte.<br />
+        Offenlegung gemäß § 25 MedienG / Informationen gemäß § 5 ECG.</p>
+    </section>
+
+    <footer>© 2026 Rainy-Day-Studios</footer>
+  </main>
+  <script>
+    // a few raindrops with random position, speed and delay
+    const rain = document.getElementById('rain');
+    for (let i = 0; i < 70; i++) {
+      const d = document.createElement('i');
+      d.style.left = Math.random() * 110 + 'vw';
+      d.style.animationDuration = 0.6 + Math.random() * 0.6 + 's';
+      d.style.animationDelay = -Math.random() * 2 + 's';
+      d.style.opacity = 0.3 + Math.random() * 0.7;
+      rain.appendChild(d);
+    }
+  </script>
+</body>
+</html>

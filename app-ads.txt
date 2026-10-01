@@ -1,0 +1,5 @@
+# app-ads.txt für Pizza Pile
+# Diese Datei muss im Stammverzeichnis der im Play Store / App Store hinterlegten
+# Entwickler-Webseite liegen: https://derlistigelurch.github.io/app-ads.txt
+# Publisher-ID von Rainy-Day-Studios (AdMob).
+google.com, pub-7036202507432062, DIRECT, f08c47fec0942fa0
