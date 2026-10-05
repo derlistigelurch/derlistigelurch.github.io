@@ -27,13 +27,13 @@
     @media (prefers-reduced-motion: reduce) { .rain { display: none; } }
     main { position: relative; max-width: 760px; margin: 0 auto; padding: 56px 16px 80px; }
     header { text-align: center; }
-    .window {
-      width: 180px; height: 180px; margin: 0 auto 24px; border-radius: 50%;
-      border: 14px solid #3a3f4b; outline: 3px solid #1a1d24;
-      background: linear-gradient(#ffd59a, #e98f55);
-      box-shadow: 0 0 80px rgba(255,180,107,.35);
-      position: relative; overflow: hidden;
-    }
+    /* the rain cloud of the app splash (same shape and colors as StudioScene.drawCloud) */
+    .cloud { display: block; width: 260px; max-width: 70vw; margin: 0 auto 8px; overflow: visible; }
+    .cloud .float { animation: float 2.8s ease-in-out infinite; }
+    @keyframes float { 50% { transform: translateY(-3px); } }
+    .cloud .drop { fill: #7ec8f2; animation: drop linear infinite; }
+    @keyframes drop { from { transform: translateY(0); opacity: 1; } to { transform: translateY(50px); opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .cloud .float, .cloud .drop { animation: none; } }
     h1 { margin: 0; font-size: clamp(30px, 7vw, 46px); letter-spacing: .5px; }
     .tagline { color: var(--muted); margin: 6px 0 0; }
     section { margin-top: 48px; }
@@ -56,8 +56,27 @@
   <div class="rain" id="rain"></div>
   <main>
     <header>
-      <div class="window" aria-hidden="true">
-      </div>
+      <svg class="cloud" viewBox="-60 -50 120 125" aria-hidden="true">
+        <defs>
+          <radialGradient id="glow">
+            <stop offset="0" stop-color="#7ec8f2" stop-opacity=".28" />
+            <stop offset="1" stop-color="#7ec8f2" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="0" cy="0" r="60" fill="url(#glow)" />
+        <g class="float">
+          <g id="drops"></g>
+          <g fill="#c9d6e6">
+            <circle cx="-22" cy="7" r="16" /><circle cx="0" cy="-3" r="22" /><circle cx="24" cy="7" r="15" />
+            <rect x="-38" y="5" width="78" height="18" rx="9" />
+          </g>
+          <g fill="#eaf1fa">
+            <circle cx="-22" cy="4" r="16" /><circle cx="0" cy="-6" r="22" /><circle cx="24" cy="4" r="15" />
+            <rect x="-38" y="2" width="78" height="18" rx="9" />
+          </g>
+          <ellipse cx="-6" cy="-18" rx="9" ry="3" fill="#fff" fill-opacity=".7" />
+        </g>
+      </svg>
       <h1>Rainy-Day-Studios</h1>
       <p class="tagline">Kleine Spiele für Regentage · Little games for rainy days</p>
     </header>
@@ -97,6 +116,20 @@
     <footer>© 2026 Rainy-Day-Studios</footer>
   </main>
   <script>
+    // drops falling out of the cloud and fading (like the app splash)
+    const drops = document.getElementById('drops');
+    for (let i = 0; i < 9; i++) {
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.setAttribute('transform', `translate(${-30 + i * 7.5} 18)`);
+      const d = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      d.setAttribute('d', 'M-1.8 0 L0 -4.2 L1.8 0 A1.8 1.8 0 1 1 -1.8 0 Z');
+      d.setAttribute('class', 'drop');
+      const dur = 0.5 + Math.random() * 0.25;
+      d.style.animationDuration = dur + 's';
+      d.style.animationDelay = -Math.random() * dur + 's';
+      g.appendChild(d);
+      drops.appendChild(g);
+    }
     // a few raindrops with random position, speed and delay
     const rain = document.getElementById('rain');
     for (let i = 0; i < 70; i++) {
