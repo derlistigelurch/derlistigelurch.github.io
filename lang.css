@@ -1,0 +1,15 @@
+/* Language switch (see lang.js). Only the chosen language is shown. */
+html[data-lang="de"] .l10n:not(:lang(de)),
+html[data-lang="en"] .l10n:not(:lang(en)) { display: none !important; }
+html:not([data-lang]) .lang-switch { display: none; }
+
+.lang-switch {
+  position: absolute; top: 24px; right: 16px; z-index: 2;
+  display: flex; border: 1px solid currentColor; border-radius: 999px; overflow: hidden;
+}
+.lang-switch button {
+  font: inherit; font-size: 13px; font-weight: 600; letter-spacing: .5px;
+  padding: 4px 12px; margin: 0; border: 0; background: none; color: inherit; cursor: pointer; opacity: .7;
+}
+.lang-switch button[aria-pressed="true"] { background: rgba(127,127,127,.3); opacity: 1; }
+.lang-switch button:focus-visible { outline: 2px solid currentColor; outline-offset: -3px; }

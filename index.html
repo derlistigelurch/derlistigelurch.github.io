@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-title-de="Rainy-Day-Studios" data-title-en="Rainy-Day-Studios">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rainy-Day-Studios</title>
   <meta name="description" content="Rainy-Day-Studios – kleine, liebevolle Spiele. Entwickler von Pizza Pile und Iron Front: Isonzo." />
+  <link rel="stylesheet" href="lang.css" />
+  <script src="lang.js"></script>
   <style>
     :root { --bg1: #141b28; --bg2: #2b3a52; --text: #eaf1fa; --muted: #a9b8cc; --card: rgba(255,255,255,.06); --warm: #ffb46b; --accent: #7ec8f2; }
     * { box-sizing: border-box; }
@@ -57,6 +59,10 @@
 <body>
   <div class="rain" id="rain"></div>
   <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
     <header>
       <svg class="cloud" viewBox="-60 -50 120 125" aria-hidden="true">
         <defs>
@@ -80,20 +86,20 @@
         </g>
       </svg>
       <h1>Rainy-Day-Studios</h1>
-      <p class="tagline">Kleine Spiele für Regentage · Little games for rainy days</p>
+      <p class="tagline"><span class="l10n" lang="de">Kleine Spiele für Regentage</span><span class="l10n" lang="en">Little games for rainy days</span></p>
     </header>
 
     <section>
-      <h2>Spiele · Games</h2>
+      <h2><span class="l10n" lang="de">Spiele</span><span class="l10n" lang="en">Games</span></h2>
       <div class="games">
       <div class="game">
         <img src="pizza-pile/icon.png" alt="Pizza Pile App-Icon" />
         <div>
           <h3><a href="pizza-pile/">Pizza Pile</a></h3>
-          <p>Stapel die höchste Pizza der Welt – von der Küche bis ins Schwarze Loch! 🍕<br />Stack the tallest pizza in the world – from the kitchen to a black hole!</p>
+          <p><span class="l10n" lang="de">Stapel die höchste Pizza der Welt – von der Küche bis ins Schwarze Loch! 🍕</span><span class="l10n" lang="en">Stack the tallest pizza in the world – from the kitchen to a black hole! 🍕</span></p>
           <div class="links">
-            <a href="pizza-pile/">Mehr / More</a>
-            <a href="pizza-pile/privacy.html">Datenschutz / Privacy</a>
+            <a href="pizza-pile/"><span class="l10n" lang="de">Mehr erfahren</span><span class="l10n" lang="en">Learn more</span></a>
+            <a href="pizza-pile/privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a>
             <!-- TODO: add the Google Play link once the game is published -->
           </div>
         </div>
@@ -102,10 +108,10 @@
         <img src="iron-front-isonzo/icon.png" alt="Iron Front: Isonzo App-Icon" />
         <div>
           <h3><a href="iron-front-isonzo/">Iron Front: Isonzo</a></h3>
-          <p>Führe Trupps an der Isonzofront 1916–1917. Taktik-Roguelite im Ersten Weltkrieg.<br />Command squads on the Isonzo front 1916–1917. Tactical WWI roguelite.</p>
+          <p><span class="l10n" lang="de">Führe Trupps an der Isonzofront 1916–1917. Taktik-Roguelite im Ersten Weltkrieg.</span><span class="l10n" lang="en">Command squads on the Isonzo front 1916–1917. Tactical WWI roguelite.</span></p>
           <div class="links">
-            <a href="iron-front-isonzo/">Mehr / More</a>
-            <a href="iron-front-isonzo/privacy.html">Datenschutz / Privacy</a>
+            <a href="iron-front-isonzo/"><span class="l10n" lang="de">Mehr erfahren</span><span class="l10n" lang="en">Learn more</span></a>
+            <a href="iron-front-isonzo/privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a>
             <!-- TODO: add the Google Play link once the game is published -->
           </div>
         </div>
@@ -114,20 +120,22 @@
     </section>
 
     <section>
-      <h2>Kontakt · Contact</h2>
-      <p>E-Mail: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a></p>
+      <h2><span class="l10n" lang="de">Kontakt</span><span class="l10n" lang="en">Contact</span></h2>
+      <p><span class="l10n" lang="de">E-Mail</span><span class="l10n" lang="en">Email</span>: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a></p>
     </section>
 
     <section id="impressum">
-      <h2>Impressum · Legal notice</h2>
+      <h2><span class="l10n" lang="de">Impressum</span><span class="l10n" lang="en">Legal notice</span></h2>
       <p>
         Rainy-Day-Studios – Jakob Müllner<br />
         Bahnstraße 51/13<br />
-        7000 Eisenstadt, Österreich<br />
-        E-Mail: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a>
+        7000 Eisenstadt, <span class="l10n" lang="de">Österreich</span><span class="l10n" lang="en">Austria</span><br />
+        <span class="l10n" lang="de">E-Mail</span><span class="l10n" lang="en">Email</span>: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a>
       </p>
-      <p class="tagline">Unternehmensgegenstand: Entwicklung und Vertrieb von Spielen für Mobilgeräte.<br />
+      <p class="tagline l10n" lang="de">Unternehmensgegenstand: Entwicklung und Vertrieb von Spielen für Mobilgeräte.<br />
         Offenlegung gemäß § 25 MedienG / Informationen gemäß § 5 ECG.</p>
+      <p class="tagline l10n" lang="en">Business purpose: development and distribution of games for mobile devices.<br />
+        Disclosure pursuant to § 25 MedienG / information pursuant to § 5 ECG (Austria).</p>
     </section>
 
     <footer>© 2026 Rainy-Day-Studios</footer>

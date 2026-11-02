@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-title-de="Iron Front: Isonzo – Taktik-Roguelite im Ersten Weltkrieg" data-title-en="Iron Front: Isonzo – Tactical WWI roguelite">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iron Front: Isonzo – Rainy-Day-Studios</title>
   <meta name="description" content="Iron Front: Isonzo – Taktik-Roguelite an der Isonzofront 1916–1917. Tactical WWI roguelite on the Isonzo front, 1916–1917." />
   <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="../lang.css" />
+  <script src="../lang.js"></script>
   <style>
     :root { --bg1: #1b1a17; --bg2: #34322b; --text: #efe8d8; --muted: #b5ab96; --card: rgba(255,255,255,.05); --line: rgba(239,232,216,.12); --brass: #c9a35c; --accent: #d9bb7e; }
     * { box-sizing: border-box; }
@@ -27,8 +29,7 @@
     .soon { margin-top: 18px; color: var(--muted); font-size: 15px; }
     section { margin-top: 48px; }
     h2 { font-size: 22px; margin: 0 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
-    .lang { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 6px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+    .grid { margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
     .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
     .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--accent); }
     .card p { margin: 0; color: var(--muted); font-size: 15px; }
@@ -42,58 +43,49 @@
 </head>
 <body>
   <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
     <a class="back" href="../">← Rainy-Day-Studios</a>
 
     <header>
-      <img class="banner" src="banner.jpg" width="1280" height="720" alt="Iron Front: Isonzo – Logo mit Gebirgstruppen beim Sturm auf eine Karststellung" />
+      <img class="banner" src="banner.jpg" width="1280" height="720" alt="Iron Front: Isonzo" />
       <h1>Iron Front: Isonzo</h1>
-      <p class="years">Isonzofront · 1916–1917</p>
-      <p class="tagline">Führe Trupps an der Isonzofront. Taktik-Roguelite im Ersten Weltkrieg.<br />Command squads on the Isonzo front. Tactical WWI roguelite.</p>
+      <p class="years"><span class="l10n" lang="de">Isonzofront</span><span class="l10n" lang="en">Isonzo front</span> · 1916–1917</p>
+      <p class="tagline"><span class="l10n" lang="de">Führe Trupps an der Isonzofront. Taktik-Roguelite im Ersten Weltkrieg.</span><span class="l10n" lang="en">Command squads on the Isonzo front. Tactical WWI roguelite.</span></p>
       <!-- TODO: replace with the Google Play link once the game is public:
-      <a class="cta" href="https://play.google.com/store/apps/details?id=com.rainydaystudios.ironfrontisonzo">Bei Google Play · Get it on Google Play</a> -->
-      <p class="soon">Bald für Android bei Google Play · Coming soon to Android on Google Play</p>
+      <a class="cta" href="https://play.google.com/store/apps/details?id=com.rainydaystudios.ironfrontisonzo">Google Play</a> -->
+      <p class="soon"><span class="l10n" lang="de">Bald für Android bei Google Play</span><span class="l10n" lang="en">Coming soon to Android on Google Play</span></p>
     </header>
 
     <section>
-      <h2>Über das Spiel</h2>
-      <p>Iron Front: Isonzo ist ein 2D-Taktikspiel an der Isonzofront des Ersten Weltkriegs. Deine Soldaten rücken selbstständig vor, suchen Deckung, erwidern das Feuer, werden niedergehalten und verlieren die Nerven. Du entscheidest, welcher Trupp wann und wohin geht, und setzt knappe Unterstützung im richtigen Moment ein.</p>
+      <h2><span class="l10n" lang="de">Über das Spiel</span><span class="l10n" lang="en">About the game</span></h2>
+      <p class="l10n" lang="de">Iron Front: Isonzo ist ein 2D-Taktikspiel an der Isonzofront des Ersten Weltkriegs. Deine Soldaten rücken selbstständig vor, suchen Deckung, erwidern das Feuer, werden niedergehalten und verlieren die Nerven. Du entscheidest, welcher Trupp wann und wohin geht, und setzt knappe Unterstützung im richtigen Moment ein.</p>
+      <p class="l10n" lang="en">Iron Front: Isonzo is a 2D tactics game set on the Isonzo front of the First World War. Your soldiers advance on their own, seek cover, return fire, get pinned down and lose their nerve. You decide which squad goes where and when, and spend scarce support at the right moment.</p>
       <div class="grid">
-        <div class="card"><h3>Zwei Seiten</h3><p>Italien oder Österreich-Ungarn, auf Schlachtfeldern im Karst, im Tal, in den Alpen und im Wald.</p></div>
-        <div class="card"><h3>Eigene Rollen</h3><p>Gewehrtrupps, MG-Teams, Sturmtrupps, Pioniere, Gebirgstruppen und Offiziere.</p></div>
-        <div class="card"><h3>Echte Taktik</h3><p>Unterdrückung, Deckung, Moral und Gelände entscheiden, ob ein Angriff durchbricht.</p></div>
-        <div class="card"><h3>Roguelite-Kampagne</h3><p>Eine Frontkarte, die hin und her pendelt, ein Regiment mit Veteranen und bleibenden Verlusten.</p></div>
-        <div class="card"><h3>Ehrenhalle</h3><p>Sie würdigt deine Regimenter und ihre Gefallenen.</p></div>
-        <div class="card"><h3>Fair</h3><p>Komplett offline spielbar. Keine In-App-Käufe; Werbung ist nur eine freiwillige Belohnung.</p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Zwei Seiten</span><span class="l10n" lang="en">Two sides</span></h3><p><span class="l10n" lang="de">Italien oder Österreich-Ungarn, auf Schlachtfeldern im Karst, im Tal, in den Alpen und im Wald.</span><span class="l10n" lang="en">Italy or Austria-Hungary, across karst, valley, alpine and forest battlefields.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Eigene Rollen</span><span class="l10n" lang="en">Distinct roles</span></h3><p><span class="l10n" lang="de">Gewehrtrupps, MG-Teams, Sturmtrupps, Pioniere, Gebirgstruppen und Offiziere.</span><span class="l10n" lang="en">Rifle squads, machine-gun teams, storm troops, engineers, mountain troops and officers.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Echte Taktik</span><span class="l10n" lang="en">Real tactics</span></h3><p><span class="l10n" lang="de">Unterdrückung, Deckung, Moral und Gelände entscheiden, ob ein Angriff durchbricht.</span><span class="l10n" lang="en">Suppression, cover, morale and terrain decide whether an assault breaks through.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Roguelite-Kampagne</span><span class="l10n" lang="en">Roguelite campaign</span></h3><p><span class="l10n" lang="de">Eine Frontkarte, die hin und her pendelt, ein Regiment mit Veteranen und bleibenden Verlusten.</span><span class="l10n" lang="en">A front map that shifts back and forth, a regiment with veterans and lasting losses.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Ehrenhalle</span><span class="l10n" lang="en">Hall of Remembrance</span></h3><p><span class="l10n" lang="de">Sie würdigt deine Regimenter und ihre Gefallenen.</span><span class="l10n" lang="en">It honours your regiments and their fallen.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">Fair</span><span class="l10n" lang="en">Fair</span></h3><p><span class="l10n" lang="de">Komplett offline spielbar. Keine In-App-Käufe; Werbung ist nur eine freiwillige Belohnung.</span><span class="l10n" lang="en">Plays fully offline. No in-app purchases; ads are optional rewards only.</span></p></div>
       </div>
-      <p class="tone">Der Ton ist ernst und dokumentarisch. Der Krieg wird nicht verherrlicht. Verfügbar in 26 Sprachen.</p>
-    </section>
-
-    <section lang="en">
-      <h2>About the game</h2>
-      <p>Iron Front: Isonzo is a 2D tactics game set on the Isonzo front of the First World War. Your soldiers advance on their own, seek cover, return fire, get pinned down and lose their nerve. You decide which squad goes where and when, and spend scarce support at the right moment.</p>
-      <ul class="facts">
-        <li>Italy or Austria-Hungary: both sides are playable, across karst, valley, alpine and forest battlefields.</li>
-        <li>Rifle squads, machine-gun teams, storm troops, engineers, mountain troops and officers with their own roles.</li>
-        <li>Suppression, cover, morale and terrain decide whether an assault breaks through.</li>
-        <li>Roguelite campaign: a front map that shifts back and forth, a regiment with veterans and lasting losses.</li>
-        <li>The Hall of Remembrance honours your regiments and their fallen.</li>
-        <li>Plays fully offline. No in-app purchases; ads are optional rewards only.</li>
-      </ul>
-      <p class="tone">The tone is serious and documentary. The war is not glorified. Available in 26 languages.</p>
+      <p class="tone"><span class="l10n" lang="de">Der Ton ist ernst und dokumentarisch. Der Krieg wird nicht verherrlicht. Verfügbar in 26 Sprachen.</span><span class="l10n" lang="en">The tone is serious and documentary. The war is not glorified. Available in 26 languages.</span></p>
     </section>
 
     <section>
-      <h2>Infos · Details</h2>
+      <h2><span class="l10n" lang="de">Infos</span><span class="l10n" lang="en">Details</span></h2>
       <ul class="facts">
-        <li>Plattform · Platform: Android</li>
-        <li>Preis · Price: kostenlos, keine In-App-Käufe · free, no in-app purchases</li>
-        <li>Werbung · Ads: nur freiwillige Belohnungsvideos (Google AdMob) · optional rewarded videos only</li>
-        <li>Google Play Games: Erfolge und Cloud-Speicherstand (optional) · achievements and cloud save (optional)</li>
+        <li><span class="l10n" lang="de">Plattform: Android</span><span class="l10n" lang="en">Platform: Android</span></li>
+        <li><span class="l10n" lang="de">Preis: kostenlos, keine In-App-Käufe</span><span class="l10n" lang="en">Price: free, no in-app purchases</span></li>
+        <li><span class="l10n" lang="de">Werbung: nur freiwillige Belohnungsvideos (Google AdMob)</span><span class="l10n" lang="en">Ads: optional rewarded videos only (Google AdMob)</span></li>
+        <li><span class="l10n" lang="de">Google Play Games: Erfolge und Cloud-Speicherstand (optional)</span><span class="l10n" lang="en">Google Play Games: achievements and cloud save (optional)</span></li>
       </ul>
       <p class="links">
-        <a href="privacy.html">Datenschutz / Privacy</a>
+        <a href="privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a>
         <a href="mailto:dalistige@gmail.com">Support: dalistige@gmail.com</a>
-        <a href="../#impressum">Impressum / Legal notice</a>
+        <a href="../#impressum"><span class="l10n" lang="de">Impressum</span><span class="l10n" lang="en">Legal notice</span></a>
       </p>
     </section>
 

@@ -1,15 +1,17 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-title-de="Iron Front: Isonzo – Datenschutzerklärung" data-title-en="Iron Front: Isonzo – Privacy Policy">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Iron Front: Isonzo – Datenschutzerklärung / Privacy Policy</title>
   <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="../lang.css" />
+  <script src="../lang.js"></script>
   <style>
     :root { --bg: #f4efe3; --text: #2a271f; --accent: #8a6a2c; --muted: #6f685a; }
     @media (prefers-color-scheme: dark) { :root { --bg: #1b1a17; --text: #efe8d8; --accent: #d9bb7e; --muted: #b5ab96; } }
     body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, sans-serif; }
-    main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    main { position: relative; max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
     h1 { color: var(--accent); line-height: 1.2; }
     h2 { margin-top: 2em; }
     a { color: var(--accent); }
@@ -19,7 +21,12 @@
 </head>
 <body>
 <main>
-  <p class="note"><a href="./">← Iron Front: Isonzo</a> · <a href="#en">English version below</a></p>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
+  <p class="note"><a href="./">← Iron Front: Isonzo</a></p>
+  <div class="l10n" lang="de">
   <h1>Datenschutzerklärung – Iron Front: Isonzo</h1>
   <p class="note">Stand: 02.11.2026</p>
 
@@ -49,10 +56,11 @@
   <h2>Änderungen</h2>
   <p>Wenn sich die App so ändert, dass andere Daten verarbeitet werden, passen wir diese Erklärung an. Es gilt die jeweils hier veröffentlichte Fassung.</p>
 
-  <hr />
+  </div>
 
-  <h1 lang="en" id="en">Privacy Policy – Iron Front: Isonzo</h1>
-  <div lang="en">
+  <div class="l10n" lang="en">
+  <h1>Privacy Policy – Iron Front: Isonzo</h1>
+  <div>
     <p class="note">Last updated: 2026-11-02</p>
     <h2>Controller</h2>
     <p>Rainy-Day-Studios – Jakob Müllner<br />Bahnstraße 51/13<br />7000 Eisenstadt, Austria<br />Email: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a></p>
@@ -72,6 +80,7 @@
     <p>You have the right to access, rectification, erasure, restriction, data portability, objection, withdrawal of consent and to lodge a complaint with a supervisory authority (in Austria: Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Vienna, <a href="https://www.dsb.gv.at">www.dsb.gv.at</a>). As we do not store any personal data ourselves, please contact Google directly about data processed for AdMob and Play Games. You can delete local game data by clearing the app's data in the Android settings or by uninstalling the app.</p>
     <h2>Changes</h2>
     <p>If the app changes in a way that processes other data, we will update this policy. The version published here applies.</p>
+  </div>
   </div>
 </main>
 </body>

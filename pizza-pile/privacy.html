@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-title-de="Pizza Pile – Datenschutzerklärung" data-title-en="Pizza Pile – Privacy Policy">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pizza Pile – Datenschutzerklärung / Privacy Policy</title>
+  <link rel="stylesheet" href="../lang.css" />
+  <script src="../lang.js"></script>
   <style>
     :root { --bg: #fff8ec; --text: #3b2418; --accent: #e85d3a; --muted: #7a6e62; }
     @media (prefers-color-scheme: dark) { :root { --bg: #1e1612; --text: #f4e6d6; --muted: #b9a998; } }
     body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, sans-serif; }
-    main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    main { position: relative; max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
     h1 { color: var(--accent); line-height: 1.2; }
     h2 { margin-top: 2em; }
     .note { color: var(--muted); font-size: 14px; }
@@ -17,6 +19,12 @@
 </head>
 <body>
 <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
+  <p class="note"><a href="./">← Pizza Pile</a></p>
+  <div class="l10n" lang="de">
   <h1>Datenschutzerklärung – Pizza Pile</h1>
   <p class="note">Stand: 05.10.2026</p>
 
@@ -46,10 +54,11 @@
   <h2>Deine Rechte</h2>
   <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit, Widerspruch und Widerruf erteilter Einwilligungen sowie ein Beschwerderecht bei einer Datenschutz-Aufsichtsbehörde, in Österreich bei der Österreichischen Datenschutzbehörde (Barichgasse 40–42, 1030 Wien, <a href="https://www.dsb.gv.at">www.dsb.gv.at</a>). Da wir selbst keine personenbezogenen Daten speichern, wende dich für Daten, die Google im Rahmen von AdMob und Play Games verarbeitet, bitte direkt an Google. Lokale Spieldaten kannst du jederzeit in der App unter <em>Einstellungen → Fortschritt zurücksetzen</em> oder durch Deinstallation löschen.</p>
 
-  <hr />
+  </div>
 
-  <h1 lang="en">Privacy Policy – Pizza Pile</h1>
-  <div lang="en">
+  <div class="l10n" lang="en">
+  <h1>Privacy Policy – Pizza Pile</h1>
+  <div>
     <p class="note">Last updated: 2026-10-05</p>
     <h2>Controller</h2>
     <p>Rainy-Day-Studios – Jakob Müllner<br />Bahnstraße 51/13<br />7000 Eisenstadt, Austria<br />Email: <a href="mailto:dalistige@gmail.com">dalistige@gmail.com</a></p>
@@ -66,6 +75,7 @@
     <p>Pizza Pile is intended for users aged 13 and older.</p>
     <h2>Your rights</h2>
     <p>You have the right to access, rectification, erasure, restriction, data portability, objection, withdrawal of consent and to lodge a complaint with a supervisory authority (in Austria: Österreichische Datenschutzbehörde, <a href="https://www.dsb.gv.at">www.dsb.gv.at</a>). Local game data can be deleted via <em>Settings → Reset progress</em> or by uninstalling the app.</p>
+  </div>
   </div>
 </main>
 </body>
