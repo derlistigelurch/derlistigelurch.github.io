@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Pile – Rainy-Day-Studios</title>
+  <meta name="description" content="Pizza Pile – Stapel die höchste Pizza der Welt, von der Küche bis ins Schwarze Loch. Stack the tallest pizza in the world, from the kitchen to a black hole." />
+  <link rel="icon" href="icon.png" />
+  <style>
+    :root { --bg1: #ffb57a; --bg2: #fff1df; --text: #3b2418; --muted: #7a5a48; --card: rgba(255,255,255,.65); --line: rgba(59,36,24,.12); --accent: #e85d3a; --yellow: #ffcb3d; }
+    @media (prefers-color-scheme: dark) { :root { --bg1: #3a2116; --bg2: #1e1612; --text: #f4e6d6; --muted: #c4ad98; --card: rgba(255,255,255,.06); --line: rgba(244,230,214,.12); --accent: #ff8a5c; } }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--bg1), var(--bg2) 520px) var(--bg2);
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    main { position: relative; max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+    .back { font-size: 15px; }
+    header { text-align: center; margin-top: 28px; }
+    .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; border-radius: 18px; box-shadow: 0 10px 30px rgba(59,36,24,.25); }
+    h1 { margin: 18px 0 0; font-size: clamp(30px, 7vw, 44px); letter-spacing: .5px; line-height: 1.2; }
+    .tagline { color: var(--muted); margin: 6px 0 0; }
+    .soon { margin-top: 18px; color: var(--muted); font-size: 15px; }
+    section { margin-top: 48px; }
+    h2 { font-size: 22px; margin: 0 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .shots img { flex: none; width: 170px; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; scroll-snap-align: start; box-shadow: 0 6px 18px rgba(59,36,24,.2); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--accent); }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    ul.facts { padding-left: 20px; margin: 0; }
+    ul.facts li { margin: 4px 0; }
+    .closing { font-weight: 600; color: var(--accent); }
+    a { color: var(--accent); }
+    .links a { margin-right: 14px; white-space: nowrap; }
+    footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="../">← Rainy-Day-Studios</a>
+
+    <header>
+      <img class="banner" src="banner.jpg" width="1024" height="500" alt="Pizza Pile – Logo und ein hoher Pizzaturm mit Kochmütze" />
+      <h1>Pizza Pile</h1>
+      <p class="tagline">Stapel die höchste Pizza der Welt – von der Küche bis ins Schwarze Loch! 🍕<br />Stack the tallest pizza in the world – from the kitchen to a black hole!</p>
+      <!-- TODO: replace with the Google Play link once confirmed public:
+      <a href="https://play.google.com/store/apps/details?id=com.rainydaystudios.pizzapile">Bei Google Play · Get it on Google Play</a> -->
+      <p class="soon">Für Android bei Google Play · On Android via Google Play</p>
+    </header>
+
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <img src="screen-1.jpg" width="432" height="768" loading="lazy" alt="Hauptmenü mit Chefkoch Peppo" />
+        <img src="screen-2.jpg" width="432" height="768" loading="lazy" alt="Pizzaturm in Peppos Küche mit Perfekt-Treffer" />
+        <img src="screen-3.jpg" width="432" height="768" loading="lazy" alt="Stapeln im Weltall" />
+        <img src="screen-4.jpg" width="432" height="768" loading="lazy" alt="Burger-Zutatenset" />
+        <img src="screen-5.jpg" width="432" height="768" loading="lazy" alt="Shop mit Outfits und Zutaten-Sets" />
+      </div>
+    </section>
+
+    <section>
+      <h2>Über das Spiel</h2>
+      <p>Tippen, stapeln, staunen! In Pizza Pile gleiten Zutaten über deine Pizza – tippe im richtigen Moment und lass sie fallen. Was übersteht, wird abgeschnitten: Deine Pizza wird schmaler, dein Turm wächst immer höher. Triffst du genau, gibt es einen Perfekt-Treffer – und mit jedem Perfekt wächst deine Pizza wieder ein Stück.</p>
+      <div class="grid">
+        <div class="card"><h3>👆 So einfach, so schwer</h3><p>Ein Finger reicht. Perfekte Treffer, Combos, goldene Zutaten, Turbo-Schichten und Pizza-Fieber.</p></div>
+        <div class="card"><h3>🚀 Bis ins Schwarze Loch</h3><p>Von Peppos Pizzeria über die Dächer der Stadt ins Weltall, zu Mond, Mars, Sonne und Schwarzem Loch.</p></div>
+        <div class="card"><h3>👨‍🍳 Peppo und seine Küche</h3><p>65 verrückte Outfits, 20 Zutaten-Sets, 26 Unterlagen, 15 Deko-Teile und ein Rezeptbuch mit 40 Rezepten.</p></div>
+        <div class="card"><h3>📅 Jeden Tag neu</h3><p>Tageschallenge, Tagesgeschenke, Missionen, Glücksrad, Pizza Pass und Events zu Halloween und Weihnachten.</p></div>
+        <div class="card"><h3>⏱️ Spielmodi</h3><p>Zeitjagd: so hoch wie möglich in 60 Sekunden. Zen: ganz ohne Druck stapeln.</p></div>
+        <div class="card"><h3>🏆 Google Play Games</h3><p>Bestenlisten, Erfolge und Cloud-Spielstand für all deine Geräte.</p></div>
+      </div>
+      <p class="closing">Wie hoch schaffst du es?</p>
+    </section>
+
+    <section lang="en">
+      <h2>About the game</h2>
+      <p>Tap, stack, amaze! In Pizza Pile, toppings slide across your pizza – tap at the right moment to drop them. Whatever hangs over gets cut off: your pizza gets narrower and your tower grows ever higher. Hit it exactly for a perfect drop – and every perfect makes your pizza grow back a little.</p>
+      <ul class="facts">
+        <li>One finger is all you need: perfect hits, combos, golden toppings, turbo layers and pizza fever.</li>
+        <li>From Peppo's cozy pizzeria over the rooftops into space, to the moon, Mars, the sun and a black hole.</li>
+        <li>65 crazy outfits, 20 topping sets, 26 plates, 15 decorations and a recipe book with 40 recipes.</li>
+        <li>Daily challenge, daily gifts, missions, a lucky wheel, the Pizza Pass and seasonal events.</li>
+        <li>Game modes: time attack (60 seconds) and zen.</li>
+        <li>Google Play Games: leaderboards, achievements and cloud save.</li>
+      </ul>
+      <p class="closing">How high can you go?</p>
+    </section>
+
+    <section>
+      <h2>Infos · Details</h2>
+      <ul class="facts">
+        <li>Plattform · Platform: Android</li>
+        <li>Preis · Price: kostenlos, durch Werbung finanziert · free to play, supported by ads</li>
+        <li>Werbefrei · Ad-free: ein einmaliger Kauf entfernt Banner- und Zwischenwerbung; freiwillige Belohnungsvideos bleiben · a one-time purchase removes banner and interstitial ads; optional reward videos stay</li>
+        <li>Offline: komplett offline spielbar · fully playable offline</li>
+        <li>Sprachen · Languages: 17</li>
+      </ul>
+      <p class="links">
+        <a href="privacy.html">Datenschutz / Privacy</a>
+        <a href="mailto:dalistige@gmail.com">Support: dalistige@gmail.com</a>
+        <a href="../#impressum">Impressum / Legal notice</a>
+      </p>
+    </section>
+
+    <footer>© 2026 Rainy-Day-Studios</footer>
+  </main>
+</body>
+</html>
