@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rainy-Day-Studios</title>
-  <meta name="description" content="Rainy-Day-Studios – kleine, liebevolle Spiele. Entwickler von Pizza Pile." />
+  <meta name="description" content="Rainy-Day-Studios – kleine, liebevolle Spiele. Entwickler von Pizza Pile und Iron Front: Isonzo." />
   <style>
     :root { --bg1: #141b28; --bg2: #2b3a52; --text: #eaf1fa; --muted: #a9b8cc; --card: rgba(255,255,255,.06); --warm: #ffb46b; --accent: #7ec8f2; }
     * { box-sizing: border-box; }
@@ -38,6 +38,7 @@
     .tagline { color: var(--muted); margin: 6px 0 0; }
     section { margin-top: 48px; }
     h2 { font-size: 22px; margin: 0 0 16px; }
+    .games { display: grid; gap: 16px; }
     .game {
       display: flex; gap: 20px; align-items: center;
       background: var(--card); border: 1px solid rgba(255,255,255,.08);
@@ -45,6 +46,7 @@
     }
     .game img { width: 96px; height: 96px; border-radius: 22px; flex: none; }
     .game h3 { margin: 0 0 4px; font-size: 20px; }
+    .game h3 a { color: inherit; text-decoration: none; }
     .game p { margin: 0 0 8px; color: var(--muted); }
     a { color: var(--accent); }
     .links a { margin-right: 14px; white-space: nowrap; }
@@ -83,6 +85,7 @@
 
     <section>
       <h2>Spiele · Games</h2>
+      <div class="games">
       <div class="game">
         <img src="pizza-pile/icon.png" alt="Pizza Pile App-Icon" />
         <div>
@@ -93,6 +96,19 @@
             <!-- TODO: add the Google Play link once the game is published -->
           </div>
         </div>
+      </div>
+      <div class="game">
+        <img src="iron-front-isonzo/icon.png" alt="Iron Front: Isonzo App-Icon" />
+        <div>
+          <h3><a href="iron-front-isonzo/">Iron Front: Isonzo</a></h3>
+          <p>Führe Trupps an der Isonzofront 1916–1917. Taktik-Roguelite im Ersten Weltkrieg.<br />Command squads on the Isonzo front 1916–1917. Tactical WWI roguelite.</p>
+          <div class="links">
+            <a href="iron-front-isonzo/">Mehr / More</a>
+            <a href="iron-front-isonzo/privacy.html">Datenschutz / Privacy</a>
+            <!-- TODO: add the Google Play link once the game is published -->
+          </div>
+        </div>
+      </div>
       </div>
     </section>
 
