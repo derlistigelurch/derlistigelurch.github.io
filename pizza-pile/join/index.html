@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="de" data-title-de="Pizza Pile – Einladung" data-title-en="Pizza Pile – Invitation">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizza Pile – Einladung</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Eine Einladung oder Herausforderung in Pizza Pile. An invitation or challenge in Pizza Pile." />
+  <link rel="icon" href="../icon.png" />
+  <link rel="stylesheet" href="../../lang.css" />
+  <script src="../../lang.js"></script>
+  <style>
+    :root { --bg1: #ffb57a; --bg2: #fff1df; --text: #3b2418; --muted: #7a5a48; --card: rgba(255,255,255,.7); --line: rgba(59,36,24,.12); --accent: #e85d3a; --yellow: #ffcb3d; }
+    @media (prefers-color-scheme: dark) { :root { --bg1: #3a2116; --bg2: #1e1612; --text: #f4e6d6; --muted: #c4ad98; --card: rgba(255,255,255,.06); --line: rgba(244,230,214,.12); --accent: #ff8a5c; } }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--bg1), var(--bg2) 520px) var(--bg2);
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    main { position: relative; max-width: 520px; margin: 0 auto; padding: 32px 16px 64px; text-align: center; }
+    .back { display: block; text-align: left; font-size: 15px; }
+    .icon { width: 112px; height: 112px; border-radius: 26px; margin-top: 36px; box-shadow: 0 10px 30px rgba(59,36,24,.25); }
+    h1 { margin: 18px 0 4px; font-size: clamp(26px, 7vw, 36px); line-height: 1.2; overflow-wrap: anywhere; }
+    .lead { color: var(--muted); margin: 0; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px; margin-top: 24px; }
+    .code { font-size: 30px; font-weight: 800; letter-spacing: 2px; color: var(--accent); margin: 4px 0 10px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    .btn { display: inline-block; margin: 8px 4px 0; padding: 12px 24px; border-radius: 999px; border: 0; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .primary { background: var(--accent); color: #fff; box-shadow: 0 6px 16px rgba(232,93,58,.35); }
+    .secondary { background: var(--yellow); color: #3b2418; }
+    .ghost { background: none; color: var(--accent); border: 2px solid var(--accent); padding: 8px 18px; font-size: 15px; }
+    .btn:hover { filter: brightness(1.05); }
+    ol { text-align: left; color: var(--muted); padding-left: 22px; margin: 12px 0 0; }
+    ol li { margin: 4px 0; }
+    a { color: var(--accent); }
+    [hidden] { display: none !important; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
+    <a class="back" href="../">← Pizza Pile</a>
+
+    <img class="icon" src="../icon.png" width="112" height="112" alt="Pizza Pile" />
+
+    <!-- friend invite: ?f=CODE&n=Name -->
+    <section id="friend" hidden>
+      <h1><span class="l10n" lang="de"><span class="who"></span> lädt dich zu Pizza Pile ein!</span><span class="l10n" lang="en"><span class="who"></span> invites you to Pizza Pile!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Werdet Freunde und fordert euch gegenseitig heraus.</span><span class="l10n" lang="en">Become friends and challenge each other.</span></p>
+    </section>
+
+    <!-- challenge link: ?c=ID&n=Name&s=Score -->
+    <section id="challenge" hidden>
+      <h1><span class="l10n" lang="de"><span class="who"></span> fordert dich heraus!</span><span class="l10n" lang="en"><span class="who"></span> challenges you!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Schlag <strong class="score"></strong> Punkte in Pizza Pile. Du hast 24 Stunden Zeit.</span><span class="l10n" lang="en">Beat <strong class="score"></strong> points in Pizza Pile. You have 24 hours.</span></p>
+    </section>
+
+    <!-- no or broken parameters -->
+    <section id="none" hidden>
+      <h1><span class="l10n" lang="de">Stapel die höchste Pizza der Welt!</span><span class="l10n" lang="en">Stack the tallest pizza in the world!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Dieser Link ist unvollständig. Hol dir Pizza Pile kostenlos bei Google Play.</span><span class="l10n" lang="en">This link is incomplete. Get Pizza Pile for free on Google Play.</span></p>
+    </section>
+
+    <div class="card">
+      <a id="open" class="btn primary" href="#" hidden><span class="l10n" lang="de">In Pizza Pile öffnen</span><span class="l10n" lang="en">Open in Pizza Pile</span></a>
+      <a id="store" class="btn secondary" href="https://play.google.com/store/apps/details?id=com.rainydaystudios.pizzapile"><span class="l10n" lang="de">Kostenlos bei Google Play</span><span class="l10n" lang="en">Free on Google Play</span></a>
+
+      <div id="codebox" hidden>
+        <p class="lead" style="margin-top:18px"><span class="l10n" lang="de">Oder gib den Freundescode im Spiel ein:</span><span class="l10n" lang="en">Or enter the friend code in the game:</span></p>
+        <div class="code" id="code"></div>
+        <button type="button" class="btn ghost" id="copy"><span class="l10n" lang="de">Code kopieren</span><span class="l10n" lang="en">Copy code</span></button>
+        <span id="copied" class="lead" hidden> ✓</span>
+        <ol>
+          <li><span class="l10n" lang="de">Pizza Pile installieren und starten</span><span class="l10n" lang="en">Install and start Pizza Pile</span></li>
+          <li><span class="l10n" lang="de">Im Menü oben links das Duell-Symbol antippen → „Freunde“</span><span class="l10n" lang="en">In the menu, tap the duel icon in the top left → “Friends”</span></li>
+          <li><span class="l10n" lang="de">„Code eingeben“ und den Code einfügen</span><span class="l10n" lang="en">Tap “Enter code” and paste the code</span></li>
+        </ol>
+      </div>
+      <p id="challengeHint" class="lead" style="margin-top:16px" hidden><span class="l10n" lang="de">Hast du Pizza Pile gerade erst installiert? Öffne danach diesen Link noch einmal.</span><span class="l10n" lang="en">Just installed Pizza Pile? Open this link again afterwards.</span></p>
+    </div>
+
+    <footer>© 2026 Rainy-Day-Studios · <a href="../privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a></footer>
+  </main>
+
+  <script>
+    // Read the link parameters (the same ones the app parses in src/logic/friendChallenge.ts, parseLink).
+    (function () {
+      var PKG = 'com.rainydaystudios.pizzapile';
+      var STORE = 'https://play.google.com/store/apps/details?id=' + PKG;
+      var q = new URLSearchParams(location.search);
+      var name = (q.get('n') || '').trim().slice(0, 24);
+      var c = q.get('c') || '';
+      var f = (q.get('f') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^PIZZA(?=[A-Z0-9]{6}$)/, '');
+      var query = '';
+      var view = 'none';
+      if (/^[A-Za-z0-9]{10,40}$/.test(c)) {
+        view = 'challenge';
+        query = 'c=' + encodeURIComponent(c);
+        var s = parseInt(q.get('s') || '', 10);
+        var scoreEls = document.querySelectorAll('.score');
+        for (var i = 0; i < scoreEls.length; i++) scoreEls[i].textContent = isFinite(s) && s >= 0 ? String(s) : '?';
+        document.getElementById('challengeHint').hidden = false;
+      } else if (/^[A-Z0-9]{6}$/.test(f)) {
+        view = 'friend';
+        query = 'f=' + f;
+        document.getElementById('code').textContent = 'PIZZA-' + f;
+        document.getElementById('codebox').hidden = false;
+      }
+      document.getElementById(view).hidden = false;
+      var who = document.querySelectorAll('.who');
+      for (var j = 0; j < who.length; j++)
+        who[j].textContent = name || (who[j].closest('[lang]').lang === 'de' ? 'Ein Freund' : 'A friend');
+
+      if (query) {
+        var open = document.getElementById('open');
+        // Android: opens the app (custom scheme), or the Play Store if it is not installed.
+        var isAndroid = /Android/i.test(navigator.userAgent);
+        open.href = isAndroid
+          ? 'intent://join?' + query + '#Intent;scheme=' + PKG + ';package=' + PKG + ';S.browser_fallback_url=' + encodeURIComponent(STORE) + ';end'
+          : PKG + '://join?' + query;
+        open.hidden = !isAndroid;
+      }
+
+      document.getElementById('copy').addEventListener('click', function () {
+        var text = document.getElementById('code').textContent;
+        var done = function () { document.getElementById('copied').hidden = false; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+        else {
+          var r = document.createRange();
+          r.selectNodeContents(document.getElementById('code'));
+          var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+          try { document.execCommand('copy'); done(); } catch (err) {}
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
