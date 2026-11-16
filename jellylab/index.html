@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="de" data-title-de="Jelly Lab – Das schwabbelige Merge-Labor" data-title-en="Jelly Lab – The wobbly merge laboratory">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jelly Lab – Rainy-Day-Studios</title>
+  <meta name="description" content="Jelly Lab – Schieße wabbelige Schleimproben ins Glas und verschmelze sie bis zur 2048. Launch wobbly jelly specimens into the tank and merge them all the way to 2048." />
+  <link rel="icon" href="icon.png" />
+  <link rel="stylesheet" href="../lang.css" />
+  <script src="../lang.js"></script>
+  <style>
+    :root { --bg1: #1c3a37; --bg2: #101c1e; --text: #e6f3ee; --muted: #a9c2bc; --card: rgba(255,255,255,.06); --line: rgba(230,243,238,.12); --accent: #8fdca9; --cta: #3fae6c; }
+    @media (prefers-color-scheme: light) { :root { --bg1: #cfeee0; --bg2: #f3faf7; --text: #17302c; --muted: #4f6d66; --card: rgba(255,255,255,.7); --line: rgba(23,48,44,.12); --accent: #2f8355; --cta: #3fae6c; } }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--bg1), var(--bg2) 520px) var(--bg2);
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    main { position: relative; max-width: 760px; margin: 0 auto; padding: 32px 16px 80px; }
+    .back { font-size: 15px; }
+    header { text-align: center; margin-top: 28px; }
+    .banner { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 500; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+    h1 { margin: 18px 0 0; font-size: clamp(30px, 7vw, 44px); letter-spacing: .5px; line-height: 1.2; }
+    .tagline { color: var(--muted); margin: 6px 0 0; }
+    .cta { display: inline-block; margin-top: 22px; padding: 10px 24px; border-radius: 999px; background: var(--cta); color: #fff; font-weight: 700; text-decoration: none; box-shadow: 0 6px 16px rgba(63,174,108,.35); }
+    .cta.soon { background: transparent; color: var(--muted); border: 2px solid var(--line); box-shadow: none; cursor: default; }
+    section { margin-top: 48px; }
+    h2 { font-size: 22px; margin: 0 0 14px; border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+    .shots { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .shots img { flex: none; width: 170px; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; scroll-snap-align: start; box-shadow: 0 6px 18px rgba(0,0,0,.3); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .card h3 { margin: 0 0 6px; font-size: 17px; color: var(--accent); }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    ul.facts { padding-left: 20px; margin: 0; }
+    ul.facts li { margin: 4px 0; }
+    .closing { font-weight: 600; color: var(--accent); }
+    a { color: var(--accent); }
+    .links a { margin-right: 14px; white-space: nowrap; }
+    footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
+    <a class="back" href="../">← Rainy-Day-Studios</a>
+
+    <header>
+      <img class="banner" src="banner.jpg" width="1024" height="500" alt="Jelly Lab" />
+      <h1>Jelly Lab</h1>
+      <p class="tagline"><span class="l10n" lang="de">Schieße wabbelige Schleimproben ins Glas und verschmelze sie bis zur 2048! 🧪</span><span class="l10n" lang="en">Launch wobbly jelly specimens into the tank and merge them all the way to 2048! 🧪</span></p>
+      <!-- TODO: Link zu Google Play einsetzen, sobald das Spiel veröffentlicht ist:
+           <a class="cta" href="https://play.google.com/store/apps/details?id=com.rainydaystudios.jellylab">…</a> -->
+      <span class="cta soon"><span class="l10n" lang="de">Bald bei Google Play</span><span class="l10n" lang="en">Coming soon to Google Play</span></span>
+    </header>
+
+    <section>
+      <h2>Screenshots</h2>
+      <div class="shots">
+        <img class="l10n" lang="de" src="screen-1-de.jpg" width="432" height="768" loading="lazy" alt="Zielen und Proben verschmelzen" />
+        <img class="l10n" lang="en" src="screen-1-en.jpg" width="432" height="768" loading="lazy" alt="Aim and merge specimens" />
+        <img class="l10n" lang="de" src="screen-2-de.jpg" width="432" height="768" loading="lazy" alt="Wabbelige Proben im Glasbehälter" />
+        <img class="l10n" lang="en" src="screen-2-en.jpg" width="432" height="768" loading="lazy" alt="Wobbly specimens in the glass tank" />
+        <img class="l10n" lang="de" src="screen-3-de.jpg" width="432" height="768" loading="lazy" alt="Kettenreaktion mit Bonuspunkten" />
+        <img class="l10n" lang="en" src="screen-3-en.jpg" width="432" height="768" loading="lazy" alt="Chain reaction with bonus points" />
+        <img class="l10n" lang="de" src="screen-4-de.jpg" width="432" height="768" loading="lazy" alt="Vier Labor-Themes" />
+        <img class="l10n" lang="en" src="screen-4-en.jpg" width="432" height="768" loading="lazy" alt="Four lab themes" />
+        <img class="l10n" lang="de" src="screen-5-de.jpg" width="432" height="768" loading="lazy" alt="Spätes Spiel mit der 2048er-Probe" />
+        <img class="l10n" lang="en" src="screen-5-en.jpg" width="432" height="768" loading="lazy" alt="Late game with the 2048 specimen" />
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="l10n" lang="de">Über das Spiel</span><span class="l10n" lang="en">About the game</span></h2>
+      <p class="l10n" lang="de">Aus den Rohren kommen laufend neue Schleimproben. Ziele, lass los und schieße sie in den Glasbehälter. Treffen sich zwei gleiche Proben, verschmelzen sie zu einer größeren: aus 2 und 2 wird 4, aus 4 und 4 wird 8 – und irgendwann vielleicht die große 2048. Aber Vorsicht: Drückt der Schleim beide Füllstand-Sensoren ein, läuft das Experiment über.</p>
+      <p class="l10n" lang="en">New slime specimens keep arriving through the pipes. Aim, release and launch them into the glass tank. When two matching specimens touch they merge into a bigger one: 2 and 2 make 4, 4 and 4 make 8 – and one day maybe the mighty 2048. But careful: if the slime presses in both level sensors, the experiment overflows.</p>
+      <div class="grid">
+        <div class="card"><h3><span class="l10n" lang="de">🫧 Echte Wackel-Physik</span><span class="l10n" lang="en">🫧 Real jelly physics</span></h3><p><span class="l10n" lang="de">Jede Probe ist weich, lässt sich quetschen, schwabbelt nach und zwängt sich in jede Lücke.</span><span class="l10n" lang="en">Every specimen is soft, squishes, jiggles and squeezes into every gap.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">⚡ Kettenreaktionen</span><span class="l10n" lang="en">⚡ Chain reactions</span></h3><p><span class="l10n" lang="de">Löst ein Schuss mehrere Verschmelzungen aus, gibt es dicke Bonuspunkte.</span><span class="l10n" lang="en">When one shot triggers several merges you earn big bonus points.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">📅 Tages-Herausforderung</span><span class="l10n" lang="en">📅 Daily challenge</span></h3><p><span class="l10n" lang="de">Jeden Tag zwei neue Sonderregeln und dieselbe Proben-Reihenfolge für alle.</span><span class="l10n" lang="en">Two new special rules every day and the same specimen order for everyone.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">🏆 Wochen-Liga</span><span class="l10n" lang="en">🏆 Weekly league</span></h3><p><span class="l10n" lang="de">Bronze, Silber, Gold und Diamant: Die besten steigen jede Woche auf.</span><span class="l10n" lang="en">Bronze, silver, gold and diamond: the best move up every week.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">🤝 Freunde herausfordern</span><span class="l10n" lang="en">🤝 Challenge friends</span></h3><p><span class="l10n" lang="de">Schick deine Punktzahl an Freunde – sie haben 24 Stunden, sie zu schlagen.</span><span class="l10n" lang="en">Send your score to friends – they have 24 hours to beat it.</span></p></div>
+        <div class="card"><h3><span class="l10n" lang="de">🎨 Vier Labor-Themes</span><span class="l10n" lang="en">🎨 Four lab themes</span></h3><p><span class="l10n" lang="de">Labor, Nachtschicht, Tiefsee und Bernstein.</span><span class="l10n" lang="en">Lab, Night Shift, Deep Sea and Amber.</span></p></div>
+      </div>
+      <p class="closing"><span class="l10n" lang="de">Wie hoch treibst du deinen Ertrag?</span><span class="l10n" lang="en">How high can you push your yield?</span></p>
+    </section>
+
+    <section>
+      <h2><span class="l10n" lang="de">Infos</span><span class="l10n" lang="en">Details</span></h2>
+      <ul class="facts">
+        <li><span class="l10n" lang="de">Plattform: Android</span><span class="l10n" lang="en">Platform: Android</span></li>
+        <li><span class="l10n" lang="de">Preis: kostenlos, durch Werbung finanziert</span><span class="l10n" lang="en">Price: free to play, supported by ads</span></li>
+        <li><span class="l10n" lang="de">Spielbar auch offline (Liga und Freunde brauchen eine Verbindung)</span><span class="l10n" lang="en">Playable offline (league and friends need a connection)</span></li>
+      </ul>
+      <p class="links">
+        <a href="privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a>
+        <a href="privacy.html#delete"><span class="l10n" lang="de">Daten löschen</span><span class="l10n" lang="en">Delete data</span></a>
+        <a href="mailto:dalistige@gmail.com">Support: dalistige@gmail.com</a>
+        <a href="../#impressum"><span class="l10n" lang="de">Impressum</span><span class="l10n" lang="en">Legal notice</span></a>
+      </p>
+    </section>
+
+    <footer>© 2026 Rainy-Day-Studios</footer>
+  </main>
+</body>
+</html>
