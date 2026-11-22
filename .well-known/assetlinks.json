@@ -1,11 +1,26 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.rainydaystudios.pizzapile",
       "sha256_cert_fingerprints": [
         "E9:E8:C0:99:78:0F:F8:FB:81:23:3E:05:A3:0A:F0:97:B8:0F:9F:1A:61:CA:07:78:73:21:C2:47:95:DF:ED:12",
+        "6C:6F:D7:6C:D0:CF:09:88:15:AA:A8:B3:35:94:9E:44:F0:82:DF:F6:78:99:07:F1:5C:A4:B2:AB:73:9A:E3:87"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.rainydaystudios.jellylab",
+      "sha256_cert_fingerprints": [
+        "DD:EC:5E:88:18:8B:C8:F5:8D:59:A5:2C:9A:D6:02:BF:30:6A:02:80:FB:19:FA:90:B2:07:24:A3:72:87:F3:8E",
         "6C:6F:D7:6C:D0:CF:09:88:15:AA:A8:B3:35:94:9E:44:F0:82:DF:F6:78:99:07:F1:5C:A4:B2:AB:73:9A:E3:87"
       ]
     }
