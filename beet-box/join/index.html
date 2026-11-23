@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de" data-title-de="Beet Box – Einladung" data-title-en="Beet Box – Invitation">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beet Box – Einladung</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="Eine Einladung oder Herausforderung in Beet Box. An invitation or challenge in Beet Box." />
+  <link rel="icon" href="../icon.png" />
+  <link rel="stylesheet" href="../../lang.css" />
+  <script src="../../lang.js"></script>
+  <style>
+    :root { --bg1: #dfeac6; --bg2: #f7f9ef; --text: #3d2b1f; --muted: #6b5a4a; --card: rgba(255,255,255,.7); --line: rgba(61,43,31,.12); --accent: #b2285c; --yellow: #f7c948; }
+    @media (prefers-color-scheme: dark) { :root { --bg1: #2c3723; --bg2: #161b12; --text: #f1f4e6; --muted: #b6c2a4; --card: rgba(255,255,255,.06); --line: rgba(241,244,230,.12); --accent: #f4a6b8; } }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: linear-gradient(var(--bg1), var(--bg2) 520px) var(--bg2);
+      color: var(--text);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+    }
+    main { position: relative; max-width: 520px; margin: 0 auto; padding: 32px 16px 64px; text-align: center; }
+    .back { display: block; text-align: left; font-size: 15px; }
+    .icon { width: 112px; height: 112px; border-radius: 26px; margin-top: 36px; box-shadow: 0 10px 30px rgba(59,36,24,.25); }
+    h1 { margin: 18px 0 4px; font-size: clamp(26px, 7vw, 36px); line-height: 1.2; overflow-wrap: anywhere; }
+    .lead { color: var(--muted); margin: 0; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px 16px; margin-top: 24px; }
+    .code { font-size: 30px; font-weight: 800; letter-spacing: 2px; color: var(--accent); margin: 4px 0 10px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+    .btn { display: inline-block; margin: 8px 4px 0; padding: 12px 24px; border-radius: 999px; border: 0; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .primary { background: #5aa04a; color: #fff; box-shadow: 0 6px 16px rgba(90,160,74,.35); }
+    .secondary { background: var(--yellow); color: #3a2a08; }
+    .ghost { background: none; color: var(--accent); border: 2px solid var(--accent); padding: 8px 18px; font-size: 15px; }
+    .btn:hover { filter: brightness(1.05); }
+    ol { text-align: left; color: var(--muted); padding-left: 22px; margin: 12px 0 0; }
+    ol li { margin: 4px 0; }
+    a { color: var(--accent); }
+    [hidden] { display: none !important; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="lang-switch" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" lang="de">DE</button>
+      <button type="button" data-set="en" lang="en">EN</button>
+    </div>
+    <a class="back" href="../">← Beet Box</a>
+
+    <img class="icon" src="../icon.png" width="112" height="112" alt="Beet Box" />
+
+    <!-- friend invite: ?f=CODE&n=Name -->
+    <section id="friend" hidden>
+      <h1><span class="l10n" lang="de"><span class="who"></span> lädt dich zu Beet Box ein!</span><span class="l10n" lang="en"><span class="who"></span> invites you to Beet Box!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Werdet Freunde und fordert euch gegenseitig heraus.</span><span class="l10n" lang="en">Become friends and challenge each other.</span></p>
+    </section>
+
+    <!-- challenge link: ?c=ID&n=Name&s=Score -->
+    <section id="challenge" hidden>
+      <h1><span class="l10n" lang="de"><span class="who"></span> fordert dich heraus!</span><span class="l10n" lang="en"><span class="who"></span> challenges you!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Löse dasselbe Beet schneller als in <strong class="score"></strong>. Du hast 24 Stunden Zeit.</span><span class="l10n" lang="en">Solve the same garden faster than <strong class="score"></strong>. You have 24 hours.</span></p>
+    </section>
+
+    <!-- no or broken parameters -->
+    <section id="none" hidden>
+      <h1><span class="l10n" lang="de">Das gemütliche Garten-Rätselspiel!</span><span class="l10n" lang="en">The cozy garden puzzle game!</span></h1>
+      <p class="lead"><span class="l10n" lang="de">Dieser Link ist unvollständig. Hol dir Beet Box bald kostenlos bei Google Play.</span><span class="l10n" lang="en">This link is incomplete. Get Beet Box for free on Google Play.</span></p>
+    </section>
+
+    <div class="card">
+      <a id="open" class="btn primary" href="#" hidden><span class="l10n" lang="de">In Beet Box öffnen</span><span class="l10n" lang="en">Open in Beet Box</span></a>
+      <a id="store" class="btn secondary" href="https://play.google.com/store/apps/details?id=com.rainydaystudios.beetbox"><span class="l10n" lang="de">Kostenlos bei Google Play</span><span class="l10n" lang="en">Free on Google Play</span></a>
+
+      <div id="codebox" hidden>
+        <p class="lead" style="margin-top:18px"><span class="l10n" lang="de">Oder gib den Freundescode im Spiel ein:</span><span class="l10n" lang="en">Or enter the friend code in the game:</span></p>
+        <div class="code" id="code"></div>
+        <button type="button" class="btn ghost" id="copy"><span class="l10n" lang="de">Code kopieren</span><span class="l10n" lang="en">Copy code</span></button>
+        <span id="copied" class="lead" hidden> ✓</span>
+        <ol>
+          <li><span class="l10n" lang="de">Beet Box installieren und starten</span><span class="l10n" lang="en">Install and start Beet Box</span></li>
+          <li><span class="l10n" lang="de">Auf der Startseite „Freunde“ antippen</span><span class="l10n" lang="en">On the home screen, tap “Friends”</span></li>
+          <li><span class="l10n" lang="de">Den Code unter „Freund hinzufügen“ einfügen</span><span class="l10n" lang="en">Paste the code under “Add a friend”</span></li>
+        </ol>
+      </div>
+      <p id="challengeHint" class="lead" style="margin-top:16px" hidden><span class="l10n" lang="de">Hast du Beet Box gerade erst installiert? Öffne danach diesen Link noch einmal.</span><span class="l10n" lang="en">Just installed Beet Box? Open this link again afterwards.</span></p>
+    </div>
+
+    <footer>© 2026 Rainy-Day-Studios · <a href="../privacy.html"><span class="l10n" lang="de">Datenschutz</span><span class="l10n" lang="en">Privacy</span></a></footer>
+  </main>
+
+  <script>
+    // Read the link parameters (the same ones the app parses in src/services/Friends.ts, parseLink).
+    (function () {
+      var PKG = 'com.rainydaystudios.beetbox';
+      var STORE = 'https://play.google.com/store/apps/details?id=' + PKG;
+      var q = new URLSearchParams(location.search);
+      var name = (q.get('n') || '').trim().slice(0, 24);
+      var c = q.get('c') || '';
+      var f = (q.get('f') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').replace(/^BEET(?=[A-Z0-9]{6}$)/, '');
+      var query = '';
+      var view = 'none';
+      if (/^[A-Za-z0-9]{10,40}$/.test(c)) {
+        view = 'challenge';
+        query = 'c=' + encodeURIComponent(c);
+        var t = parseInt(q.get('t') || '', 10);
+        var time = isFinite(t) && t > 0 ? Math.floor(t / 60) + ':' + String(t % 60).padStart(2, '0') : '?';
+        var scoreEls = document.querySelectorAll('.score');
+        for (var i = 0; i < scoreEls.length; i++) scoreEls[i].textContent = time;
+        document.getElementById('challengeHint').hidden = false;
+      } else if (/^[A-Z0-9]{6}$/.test(f)) {
+        view = 'friend';
+        query = 'f=' + f;
+        document.getElementById('code').textContent = 'BEET-' + f;
+        document.getElementById('codebox').hidden = false;
+      }
+      document.getElementById(view).hidden = false;
+      var who = document.querySelectorAll('.who');
+      for (var j = 0; j < who.length; j++)
+        who[j].textContent = name || (who[j].closest('[lang]').lang === 'de' ? 'Ein Freund' : 'A friend');
+
+      if (query) {
+        var open = document.getElementById('open');
+        // Android: opens the app (custom scheme), or the Play Store if it is not installed.
+        var isAndroid = /Android/i.test(navigator.userAgent);
+        open.href = isAndroid
+          ? 'intent://join?' + query + '#Intent;scheme=' + PKG + ';package=' + PKG + ';S.browser_fallback_url=' + encodeURIComponent(STORE) + ';end'
+          : PKG + '://join?' + query;
+        open.hidden = !isAndroid;
+      }
+
+      document.getElementById('copy').addEventListener('click', function () {
+        var text = document.getElementById('code').textContent;
+        var done = function () { document.getElementById('copied').hidden = false; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, function () {});
+        else {
+          var r = document.createRange();
+          r.selectNodeContents(document.getElementById('code'));
+          var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+          try { document.execCommand('copy'); done(); } catch (err) {}
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
